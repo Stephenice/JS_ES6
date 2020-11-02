@@ -16,13 +16,14 @@ GOOD LUCK 😀
 
 const Dolphins = Math.trunc((96 + 108 + 89) / 3);
 const Koalas = Math.trunc((88 + 91 + 110) / 3);
+console.log(`Dolphins score is ${Dolphins} AND Koalas score is ${Koalas}`);
 
 if (Dolphins > Koalas  && Dolphins >= 100 ){
  console.log(`Dolphin Win the game by ${Dolphins-Koalas} points. 🏆`);
 } else if(Koalas > Dolphins && Koalas >= 100){
-    console.log( `Koalas wins the game by ${Koalas - Dolphins} points.`)
+    console.log( `Koalas wins the game by ${Koalas - Dolphins} points. 🏆`)
 } else if (Dolphins === Koalas && Dolphins >= 100 && Koalas >= 100 ){
-    console.log( ` Draw game`)
+    console.log( ` Draw game!`)
 } else{
-    console.log(`Nobody wins`)
+    console.log(`Nobody win!`)
 }
