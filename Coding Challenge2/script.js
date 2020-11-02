@@ -12,8 +12,8 @@ const massJohn = 92;
 const heightJohn = 1.95;
 
 
-const BMIMark = massMark / heightMark ** 2;
-const BMIJohn = massJohn / (heightJohn * heightJohn);
+const BMIMark = Math.trunc( massMark / heightMark ** 2);
+const BMIJohn = Math.trunc(massJohn / (heightJohn * heightJohn));
 console.log(BMIMark, BMIJohn);
 
 if(BMIMark > BMIJohn){
