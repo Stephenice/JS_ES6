@@ -13,7 +13,9 @@ HINT: Value X is between 50 and 300, if it's >= 50 && <= 300 😉
 
 GOOD LUCK 😀
 */
-const bill= 275;
+
+// ternary = condition ? true : false;
+'use strict' 
+const bill= 45;
 const tip = bill >= 50 && bill <= 300 ? (bill * 0.15) : (bill * 0.2);
 console.log(`The tip is ${tip} and the final value is ${bill+tip}`);
- 
