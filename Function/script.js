@@ -1,8 +1,12 @@
 //function declaration
 //Note: f(x) declaration can be call or invoke before the f(x) because of Hositing
-/*
+
+/* Rules 
 Every parameter in a f(x) is a local varable of that f(x)
+Return keyword will always exit from the block once its excuted
 */
+
+//Hositing calling
 const age= calculateAge(1990);
 
 function calculateAge(birthYear){
