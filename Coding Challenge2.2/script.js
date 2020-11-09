@@ -34,3 +34,8 @@ const tips = [calcuTip(bills[0]), calcuTip(bills[1]), calcuTip(bills[2])];
 const totals =  [tips[0] + bills[0], tips[1]+ bills[1], tips[2] + bills[2]];
 console.log(tips);
 console.log(totals);
+
+const arr = [3, 5, 7, 2, [4, NaN, null, 4, 8, [3, undefined, 24, null],
+null, 5, 1], NaN, 45, 2, 1];
+
+console.log(arr[4][0]);
