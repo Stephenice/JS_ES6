@@ -38,4 +38,4 @@ console.log(totals);
 const arr = [3, 5, 7, 2, [4, NaN, null, 4, 8, [3, undefined, 24, null],
 null, 5, 1], NaN, 45, 2, 1];
 
-console.log(arr[4][0]);
+console.log(arr[4][5][2]);
