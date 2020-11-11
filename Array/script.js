@@ -1,4 +1,7 @@
 // creating Array
+const profile_information = [];
+
+
 
 //Accessing Array
 
@@ -6,4 +9,7 @@
 
 //Removing elements
 
-//Using Method in Array
+//Array Method
+
+
+//Array Properties
