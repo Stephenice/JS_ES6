@@ -11,16 +11,17 @@ TEST DATA: Marks weights 78 kg and is 1.69 m tall. John weights 92 kg and is 1.9
 
 GOOD LUCK 😀
 */
-
+'use strict'
 const Mark = {
     firstname: 'mark',
     lastname:  'miller',
     height: 1.69, 
     mass: 78 ,
-    calcBMI: function(){
-        return this.mass / this.height ** 2;
+    calcBMI: function () {
+        this.bmi = this.mass / this.height ** 2;
+        return this.bmi;
     }
-}
+};
 
 const John = {
     firstname: 'john',
@@ -28,8 +29,21 @@ const John = {
     height: 1.95, 
     mass: 92,
     calcBMI: function(){
-       return this.mass / this.height ** 2;
+       this.bmi = this.mass / this.height ** 2;
+       return this.bmi;
     }
-}
+};
 
-console.log(John.calcBMI());
+Mark.calcBMI();
+John.calcBMI();
+
+const BMIMark = Mark.bmi;
+const BMIJohn = John.bmi;
+
+if(BMIMark > BMIJohn){
+    console.log(`Mark's BMI is ${BMIMark} higher than John's ${BMIJohn}!`);
+}else if(BMIMark < BMIJohn) {
+    console.log(`John's BMI is ${BMIJohn} higher than Mark's ${BMIMark}!`);
+}else{
+    console.log(`John's AND Mark's have same BMI!`);
+}
