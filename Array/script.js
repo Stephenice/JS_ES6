@@ -1,5 +1,8 @@
 // creating Array
-const profile_information = [];
+const profile_information = [23,34,45];
+
+profile_information.peek();
+
 
 
 
