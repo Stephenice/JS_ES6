@@ -26,21 +26,35 @@ function calcuTip(bill){
     let tip;
     if(bill >=50 && bill <= 300){
         tip = 0.15 * bill;
-         tips.push(tip);
-         
+        return tip;
     }else{
         tip = 0.20 * bill;
-         tips.push(tip);
+        return tip;
 }
 }
+
 // console.log(tips);
 
 for (let i = 0; i < bills.length; i++) {
-   totals.push(bills[i]);
-    calcuTip(bills[i]);   
+    const tip = calcuTip(bills[i]);  
+    tips.push(tip);
+    totals.push(tip + bills[i]);
 }
 
 console.log(tips);
 console.log(totals);
 
 // console.log(calcuTip());
+
+function calcAverage(arr){
+    
+    let sum = 0;
+    for (let y = 0; y < arr.length; y++) {
+        sum  += arr[y];
+        
+    }
+    return sum;
+}
+
+
+console.log(calcAverage(totals));
