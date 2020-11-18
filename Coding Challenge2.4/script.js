@@ -48,13 +48,18 @@ console.log(totals);
 
 function calcAverage(arr){
     
-    let sum = 0;
+    let sum = 0
+    let avg = 0;
     for (let y = 0; y < arr.length; y++) {
         sum  += arr[y];
         
     }
-    return sum;
+    avg = sum / arr.length;
+    const avg_sum = [sum, avg];
+    //return more than one valus
+    return avg_sum;
 }
 
 
-console.log(calcAverage(totals));
+console.log(calcAverage(totals)[0]);
+console.log(calcAverage(totals)[1]);
