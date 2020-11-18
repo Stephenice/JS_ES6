@@ -61,5 +61,6 @@ function calcAverage(arr){
 }
 
 
+
 console.log(calcAverage(totals)[0]);
 console.log(calcAverage(totals)[1]);
