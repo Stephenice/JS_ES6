@@ -11,18 +11,17 @@ document.querySelector('.check').addEventListener('click', function(){
 
     if(!guessNumber){
         messageUpdate('🚫 No number ...');
-        // document.querySelector('.message').textContent = '🚫 No number ...'
     } else if (guessNumber === secretNumber){
-        document.querySelector('.message').textContent = '🟢 👍 Correct Number ...'
-        document.querySelector('body').style.backgroundColor ='';
+        updateHighScore();
+        messageUpdate('🟢 👍 Correct Number ');
+        document.querySelector('body').style.backgroundColor ='green';
     }else if (guessNumber > secretNumber){
-        document.querySelector('.message').textContent = '📈 Too High ...'
+        messageUpdate('📈 Too High ');
         scoreUpdate();
     }else if (guessNumber < secretNumber){
-        document.querySelector('.message').textContent = '📉 Too Low ...'
+        messageUpdate('📉 Too Low  ');
         scoreUpdate();
     }
-
 })
 
 
@@ -61,5 +60,11 @@ function win(){
 
 // high score
 function updateHighScore(){
+    if(score > highScore){
+        highScore = score;
+        document.querySelector('.highscore').textContent = highScore;
+    }else{
+        document.querySelector('.highscore').textContent = highScore;
+    }
 
 }
