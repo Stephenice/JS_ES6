@@ -69,5 +69,29 @@ const [p=1 ,q=1,r='No value',s=1] = [8,9];
 console.log(p,q,r,s);
 
 /***********///Destructuring Object/************** */
+// to Destructuring Object
+const {name, openingHours, categories} = restaurant;
+console.log(name, openingHours,categories);  
+
+//to change the properties name to variable
+const {name : restaurantName, openingHours: hours, categories: tags} = restaurant;
+console.log(restaurantName, hours, tags);
+
+//to create a default values for a properties that doesnt exit in a Object
+const {menu = ['no prpperties'], startMenu: starter = []} = restaurant;
+console.log(menu, starter);
+
+// Mutating variables
+let value1 = 26;
+let value2 = 30;
+/* override the variables in the object */
+const obj = {
+    value1 : 122,
+    value2 : 130,
+};
+/* used the () to wrap the mutate the object properties  */
+/* there is no need to declare it */
+({value1,value2} = obj);
+console.log(value1,value2);
 
 
