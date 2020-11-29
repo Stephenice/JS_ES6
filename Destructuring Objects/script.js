@@ -37,8 +37,23 @@ const restaurant = {
 
     order: function(startIndex, mainIndex){
         return [this.startMenu[startIndex],this.mainMenu[mainIndex]];
+    },
+
+    orderDelivery: function({time =['no time'], address, mainIndex, startIndex}){
+        console.log(`Order recived! ${this.startMenu[startIndex]} and ${this.mainMenu[mainIndex]} at ${time} to ${address}`);
     }
 }
+
+//pass a object as a parameter in a function object(method), after the object will destructure
+//calling the function
+//Note: when passing a object properties in a function , the properties name must be the same name with the object properties from where you are calling the function.
+const myObj1 = {
+    time: '22:00',
+    address: 'van street 22',
+    mainIndex: 0,
+    startIndex: 1,
+};
+restaurant.orderDelivery(myObj1);
 
 
 /***********/// Destructuring Array
@@ -93,5 +108,11 @@ const obj = {
 /* there is no need to declare it */
 ({value1,value2} = obj);
 console.log(value1,value2);
+
+// nested Object
+const {fri:{open: o, close: c}} = openingHours;
+console.log(o,c);
+
+
 
 
