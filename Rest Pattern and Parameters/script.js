@@ -43,7 +43,12 @@ const restaurant = {
 
     orderDelivery: function({time =['no time'], address, mainIndex, startIndex}){
         console.log(`Order recived! ${this.startMenu[startIndex]} and ${this.mainMenu[mainIndex]} at ${time} to ${address}`);
-    }
+    },
+
+    orderPizza: function(mainIngredient, ...otherIngredient){
+        console.log(mainIngredient);
+        console.log(otherIngredient);
+    },
 }
 
 //1. Destructuring
@@ -91,3 +96,9 @@ add(1,3,3,4,6,78);
 add(44,44,22,55,3,5,32);
 const addArr = [2,4,5,3,3];
 add(...addArr); //spread operator
+
+// order pizza
+const ingr1=['mushsroom', 'onions'];
+const ingrOtherRest=['oliver','spinach'];
+restaurant.orderPizza('mushsroom', 'onions','oliver','spinach');// the first value will be the main and other will be the Rests
+restaurant.orderPizza( ingr1, ...ingrOtherRest );
