@@ -46,6 +46,7 @@ const restaurant = {
     }
 }
 
+//1. Destructuring
 //spread: used in the right on the assignment operator
 /*We used the spread operator to build new arrays or to pass multiple values into a function.
 So those are the two use cases of the spread operator and in both cases, we use the spread operator 
@@ -69,3 +70,24 @@ console.log(firstValue, thirdValue, restValues);
 
 
 //Object
+//the variable name must match with the object name
+const {sat, sun, ...weekDays} =restaurant.openingHours;
+console.log(weekDays);
+
+
+//2. function
+/** rest syntax is taking multiple numbers or multiple values and then packs them all into one array.
+So, once more it is doing the opposite of the spread operator so with the spread operator we expand
+with the rest syntax we compress */
+
+function add(...number){ //rest parameter
+    let sum = 0;
+    for(let i=0 ; i<number.length; i++)
+    sum += number[i];
+    console.log(sum);
+};
+
+add(1,3,3,4,6,78);
+add(44,44,22,55,3,5,32);
+const addArr = [2,4,5,3,3];
+add(...addArr); //spread operator
