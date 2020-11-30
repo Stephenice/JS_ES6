@@ -67,6 +67,20 @@ function orderFood(ar1, ar2, ar3){
 
 orderFood(...ar);
 
-//Object
+//iterable : are array, string, map, set but Not Object
+//individual string words
+const str = 'stephen';
+const letter = ['Mr',' ',...str];
+console.log(letter);
 
-// copy object
+
+//Object
+const newRestaurant = {founder: 'Stephen', ...restaurant, year: 1990 };
+console.log(newRestaurant);
+console.log(restaurant);
+
+// copy object: when coping is will be a shallow copy and its will not effect the original object
+const copyRestaurant = {...restaurant};
+copyRestaurant.name = 'Crocrodice';
+console.log(restaurant);
+console.log(copyRestaurant);
