@@ -43,3 +43,30 @@ const restaurant = {
         console.log(`Order recived! ${this.startMenu[startIndex]} and ${this.mainMenu[mainIndex]} at ${time} to ${address}`);
     }
 }
+
+//spread ... operator
+const arr = [1,2,3];
+const newArr = [4,5,6, ...arr];
+console.log(newArr);
+console.log(...newArr);
+
+//coping array
+const menu = ['rice', ...restaurant.startMenu];
+console.log(...menu);
+
+//merge array
+const newMenu = [...restaurant.startMenu, ...restaurant.mainMenu];
+console.log(newMenu);
+
+//to pass individual array in a function, use the spread operator b4 the array
+//function
+const ar=[23,24,2,4];
+function orderFood(ar1, ar2, ar3){
+    console.log(`${ar1} and ${ar2} and ${ar3}`);
+}
+
+orderFood(...ar);
+
+//Object
+
+// copy object
