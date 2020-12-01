@@ -1,24 +1,25 @@
 /**
  * Now ES6 introduced three ways, which make it easier to write object literals like:
  */
+const weekdays = ['mon','tue','wed','thu','fri'];
 const openingHours = {
-    mon: {
+    [weekdays[0]]: {
         open:12,
         close: 20
     },
-    tue: {
+    [weekdays[1]]: {
         open:11,
         close: 21
     },
-    wed: {
+    [weekdays[2]]: {
         open:09,
         close: 22
     },
-    thu: {
+    [weekdays[3]]: {
         open:10,
         close: 23
     },
-    fri: {
+    [weekdays[4]]: {
         open:07,
         close: 24
     },
@@ -47,6 +48,7 @@ const restaurant = {
     order(startIndex, mainIndex){
         return [this.startMenu[startIndex],this.mainMenu[mainIndex]];
     },
+
     //old way of writing f(x) expression
     orderDelivery: function({time =['no time'], address, mainIndex, startIndex}){
         console.log(`Order recived! ${this.startMenu[startIndex]} and ${this.mainMenu[mainIndex]} at ${time} to ${address}`);
@@ -63,4 +65,10 @@ const restaurant = {
 
 
 //2. ES6 enhanced on function expression in line 47 to 49
+
+//3. 
+/*the third enhancement is
+that we can now actually compute property names instead of having to write them out manually and literally. 
+And compute just means like calculate. Line 4 to 22
+*/
 
