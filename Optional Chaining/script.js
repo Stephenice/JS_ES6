@@ -71,11 +71,16 @@ if (restaurant.openingHours && restaurant.openingHours.mon)
 // WITH optional chaining
 console.log(restaurant.openingHours.mon?.open);
 console.log(restaurant.openingHours?.mon?.open);
+console.log(restaurant.categories?.[0]);
 
 // Example
 const days = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
 
 for (const day of days) {
+//Note: in line 81 [day]
+/**Because this is not an actual property name of the object.
+And so remember if we want to use a variable name as the property name,
+basically, we need to use the brackets notation. */
   const open = restaurant.openingHours[day]?.open ?? 'closed';
   console.log(`On ${day}, we open at ${open}`);
 }
