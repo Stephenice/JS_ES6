@@ -52,3 +52,25 @@ const restaurant = {
         console.log(`Order recived! ${this.startMenu[startIndex]} and ${this.mainMenu[mainIndex]} at ${time} to ${address}`);
     }
 }
+
+//obj are not iterable but we can loop obj in an indirect way
+//obj looping - properties name : Object.keys(object )
+//Object name
+let openday = '';
+for(const days of Object.keys(openingHours)){
+    
+    openday += `${ days}`;
+}
+console.log(openday);
+//
+
+//Object values
+ for(const dayVal of Object.values(openingHours.mon))
+    console.log(dayVal);
+
+  //Entries Obj
+  //to loop everything in an object is entries
+  for(const [day, {open, close}] of Object.entries(openingHours)){
+  const openat = `on ${day} we open at ${open} and ${close}`; 
+  console.log(openat); 
+  }

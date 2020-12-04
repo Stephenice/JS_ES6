@@ -62,3 +62,20 @@ const game = {
     },
   };
   
+
+  //solution
+  for(const [index, player ]of game.scored.entries())
+  console.log(`Goal ${index + 1}: ${player}`);
+
+  //2.
+  const odd = Object.values(game.odds);
+  let oddAvg = 0;
+  for(const i of odd)
+  oddAvg += i;
+  console.log(oddAvg / odd.length);
+
+  //3
+  for(const [index,valueP] of Object.entries(game.odds)){
+   const result =  inde === 'x' ? `draw` : ` victory ${game[index]} ` ;
+   console.log(`Odd of ${result} ${valueP}`);
+  }
