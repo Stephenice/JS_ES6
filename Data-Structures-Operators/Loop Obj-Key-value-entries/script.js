@@ -54,7 +54,7 @@ const restaurant = {
 }
 
 //obj are not iterable but we can loop obj in an indirect way
-//obj looping - properties name : Object.keys(object )
+//obj looping - properties name : Object.keys(object properties )
 //Object name
 let openday = '';
 for(const days of Object.keys(openingHours)){
