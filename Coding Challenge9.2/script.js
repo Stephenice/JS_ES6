@@ -64,4 +64,15 @@ const game = {
   
 
   //solution
+/*
+1. Loop over the game.scored array and print each player name to the console, along with the goal number (Example: "Goal 1: Lewandowski")
+*/
+for (const [index , values] of game.scored.entries()){
+console.log(`Goal ${index + 1}: ${values}`);
+}
+
+
+/*
+2. Use a loop to calculate the average odd and log it to the console (We already studied how to calculate averages, you can go check if you don't remember)
+*/
 
