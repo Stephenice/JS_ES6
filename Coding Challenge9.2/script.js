@@ -75,4 +75,11 @@ console.log(`Goal ${index + 1}: ${values}`);
 /*
 2. Use a loop to calculate the average odd and log it to the console (We already studied how to calculate averages, you can go check if you don't remember)
 */
-
+const odd = game.odds;
+let totalOdd = 0, avg = 0;
+for(const [oddteam, point] of Object.entries(odd)){
+  totalOdd += point;
+  avg++;
+}
+let avgOdd = totalOdd /avg ;
+console.log(avgOdd);
