@@ -21,6 +21,17 @@ BONUS: Create an object called 'scorers' which contains the names of the players
 GOOD LUCK 😀
 */
 
+ /**
+  * 4
+  */
+
+ const scorers ={
+  Gnarby: 1,
+  Hummels: 1,
+  Lewandowski: 2
+};
+
+
 const game = {
     team1: 'Bayern Munich',
     team2: 'Borrussia Dortmund',
@@ -52,6 +63,9 @@ const game = {
         'Gotze',
       ],
     ],
+
+    scorers,
+
     score: '4:0',
     scored: ['Lewandowski', 'Gnarby', 'Lewandowski', 'Hummels'],
     date: 'Nov 9th, 2037',
@@ -99,3 +113,4 @@ Get the team names directly from the game object, don't hardcode them (except fo
   const result = index === 'x' ? 'draw' : `victory ${game[index]}`;
   console.log(`Odd of ${result}: ${oddvalue}`);
  }
+
