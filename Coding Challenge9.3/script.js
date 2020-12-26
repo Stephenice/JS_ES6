@@ -42,3 +42,15 @@ const gameEvents = new Map([
   const print = [...gameEvents.keys()].pop();
   console.log(print);
   console.log(`An event happened, on average, every ${print/gameEvents.size} minutes`);
+
+  /**
+   * Loop over the events and log them to the console, marking whether it's in the first half or second half (after 45 min) of the game, like this:
+      [FIRST HALF] 17: ⚽️ GOAL
+   */
+  for(const [keys, values] of gameEvents)
+ // console.log(keys);
+  if(keys < 45){
+console.log(` [FIRST HALF] ${keys} : ${values}`);
+  }else if(keys > 45){
+    console.log(`[SECOND HALF] ${keys} : ${values}`);
+  }
