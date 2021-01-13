@@ -12,6 +12,7 @@ const btnHOLD = document.querySelector('.btn--hold');
 const playerTurn0 = document.querySelector('.name--0');
 const playerTurn1 = document.querySelector('.name--1');
 
+
 let currentScore, score, activePlayer,playing;
 
 
