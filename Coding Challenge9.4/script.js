@@ -45,10 +45,27 @@ const msg = document.querySelector('textarea');
 
 bnt.addEventListener('click', () =>{
 const msgValue = msg.value;
-const msgSplit = msgValue.split('_');
-const [first, last] = msgSplit;
-const msgCap = last[0].toUpperCase()+last.slice(1).toLowerCase();
-const result = `${first.toLowerCase()}${msgCap}`
+const msgLoop = msgValue.split('\n');
 
-console.log(result);
+for(const [index, values] of msgLoop.entries()){
+    const msgSplit = values.split('_');
+    const [first, last] = msgSplit;
+    const msgCap = last[0].toUpperCase()+last.slice(1).toLowerCase();
+    const msgJoin = first.toLowerCase()+msgCap;
+    const 
+    const result = `${msgString} ${index +1}`
+    console.log(msgJoin);
+
+
+}
+
+
+
+
+// const msgSplit = msgValue.split('_');
+// const [first, last] = msgSplit;
+// const msgCap = last[0].toUpperCase()+last.slice(1).toLowerCase();
+// const result = `${first.toLowerCase()}${msgCap}`
+
+//console.log(index);
 })
