@@ -52,7 +52,7 @@ for(const [index, values] of msgLoop.entries()){
     const [first, last] = msgSplit;
     const msgCap = last[0].toUpperCase()+last.slice(1).toLowerCase();
     const msgJoin = first.toLowerCase()+msgCap;
-    const result = `${msgJoin.trim().padEnd(25, " ")} ${index +1}`
+    const result = `${msgJoin.trim().padEnd(25, " ")} ${'✅'.repeat(index +1) }`
     console.log(result);
 
 
