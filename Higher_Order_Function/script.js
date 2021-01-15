@@ -15,12 +15,12 @@ function costs (words){
 }
 
 function wordsFunction(){
-    const wordsFormat = words.value;
+    const wordsFormat = words.value.trim();
     wordsLength(wordsFormat);
-    console.log(wordsFormat);
+    console.log(typeof(wordsFormat));
 }
 
-wordsFunction(words.value);
+//wordsFunction(words.value);
 
 btn.addEventListener('click', wordsFunction )
 
