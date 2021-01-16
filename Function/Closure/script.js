@@ -1,42 +1,32 @@
-//function declaration
-//Note: f(x) declaration can be call or invoke before the f(x) because of Hositing
+const greet =  (greeting) =>{
 
-/* Rules 
-Every parameter in a f(x) is a local varable of that f(x)
-Return keyword will always exit from the block once its excuted
-*/
+    return (name)=>{
+        console.log(`${greeting} ${name}`);
+    }
+};
 
-//Hositing calling
-const age= calculateAge(1990);
+greet('hello')('steven');
 
-function calculateAge(birthYear){
-    return 2020 - birthYear;
+//OR
+/**
+ */
+const greeting = firstMsg => innerMsg =>{
+    console.log(`${firstMsg} ${innerMsg}`);
 }
 
-//function expression produce result
-const calculateAge2 = function (birthYear){
-    return 2020 - birthYear;
+greeting('hey')('jame');
+
+
+//Arrow function
+const x = ()=>{
+    console.log(`hello`);
 }
 
-const age2 = calculateAge2(1991)
-
-console.log(`f() declaration Age is ${age}`);
-console.log(`f() expression Age is ${age2}`);
-
-
-// f(x) calling a f(x)
-// Dont repeat Yourself rule
-
-function fruitCut(fruit){
-    return 4 * fruit;
+const y = hello=>{
+    console.log(`${hello}`);
 }
 
-function fruits(apples, orange){
-    //calling fruitCut function inside fruits function
-    const applesPieces = fruitCut(apples);
-    const orangesPieces = fruitCut(orange);
-    const juices = `Apple pieces is ${applesPieces} and Orange pieces is ${orangesPieces}`;
-    return juices;
-}
 
-console.log(fruits(4, 5));
+x();
+y('Hey Hey')
+
