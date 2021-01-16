@@ -11,7 +11,7 @@ function wordsLength (words){
 
 function costs (words){
     const totalCost = words * 5
-    document.querySelector('.cost').innerHTML=totalCost;
+    document.querySelector('.cost').innerHTML=`Cost: $${totalCost}`;
 }
 
 function wordsFunction(){
@@ -23,4 +23,3 @@ function wordsFunction(){
 //wordsFunction(words.value);
 
 btn.addEventListener('click', wordsFunction )
-
