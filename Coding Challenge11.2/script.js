@@ -15,3 +15,34 @@ TEST DATA 2: [16, 6, 10, 5, 6, 1, 4]
 GOOD LUCK 😀
 */
 
+const arr = [5, 2, 4, 1, 15, 8, 3];
+
+calcAverageHumanAge(arr)
+
+function calcAverageHumanAge(ages){
+    
+const humanAge = ages.map(function(dogAge){
+    if (dogAge <= 2){
+       return 2 * dogAge;
+    }else{
+        return 16 + dogAge * 4;
+    }
+})
+console.log(humanAge);
+
+    //filter
+const dog = humanAge.filter(function(dogLess){
+    return dogLess > 18;
+})
+ 
+console.log(dog);
+
+const avgDog = dog.reduce(function(acc, values,i, arrE){
+    //console.log(arrE.length);
+    return acc + values/arrE.length;
+}, 0)
+
+console.log(avgDog);
+
+
+}
