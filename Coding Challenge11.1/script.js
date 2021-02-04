@@ -18,3 +18,19 @@ TEST DATA 2: Julia's data [9, 16, 6, 8, 3], Kate's data [10, 5, 6, 1, 4]
 
 GOOD LUCK 😀
 */
+const julia = [3, 5, 2, 12, 7];
+const kate = [4, 1, 15, 8, 3];
+
+function checkDogs(j,k){
+const jdogs = [...j];
+const onlyJdogs = jdogs.slice(1,-2);
+console.log(onlyJdogs);
+const allDogs = [...onlyJdogs, ...k];
+
+allDogs.forEach(function(dogAge, i){
+const answer = dogAge > 3 ?  `Dog number ${i +1} is an adult, and is ${dogAge} years old` : `Dog number ${i + 1} is still a puppy 🐶`
+console.log(answer); 
+})
+}
+
+checkDogs(julia, kate);
