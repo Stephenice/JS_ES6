@@ -81,6 +81,14 @@ const displayMovements = function(movements){
 
 displayMovements(account1.movements);
 
+//dispaly balance
+const calcDisplayBalance = function(movements){
+  const balance = movements.reduce((acc, mov) => acc + mov, 0);
+  labelBalance.textContent = `${balance} EUR`;
+}
+
+calcDisplayBalance(account1.movements);
+
 //creating username and transforming information
 const createUsernames = function(accs){
   accs.forEach(function(acc){
@@ -106,6 +114,6 @@ const currencies = new Map([
   ['GBP', 'Pound sterling'],
 ]);
 
-const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+//const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
 /////////////////////////////////////////////////
