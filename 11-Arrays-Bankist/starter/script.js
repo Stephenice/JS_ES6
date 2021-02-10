@@ -61,6 +61,41 @@ const inputLoanAmount = document.querySelector('.form__input--loan-amount');
 const inputCloseUsername = document.querySelector('.form__input--user');
 const inputClosePin = document.querySelector('.form__input--pin');
 
+
+//function to display the tranaction 
+const displayMovements = function(movements){
+  containerMovements.innerHTML= '';
+    movements.forEach(function (mov, i){
+      //condition for deposit and withdrawn
+      const type = mov > 0 ? 'deposit' : 'withdrawal';
+      const html = `
+      <div class="movements__row">
+      <div class="movements__type movements__type--${type}">${i + 1} ${type}</div>
+      <div class="movements__value">${mov}</div>
+    </div>`;
+
+    //method to insert html 
+    containerMovements.insertAdjacentHTML('afterbegin', html);
+    })
+};
+
+displayMovements(account1.movements);
+
+//creating username and transforming information
+const createUsernames = function(accs){
+  accs.forEach(function(acc){
+    acc.username = acc.owner
+    .toLowerCase()
+    .split(' ')
+    .map(name => name[0])
+    .join('');
+  })
+}
+
+createUsernames(accounts);
+
+
+
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
 // LECTURES
