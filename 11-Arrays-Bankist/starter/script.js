@@ -102,6 +102,15 @@ const createUsernames = function(accs){
 
 createUsernames(accounts);
 
+//summary display
+const calcDisplaySummary = function (movements){
+  const income = movements
+  .filter()
+}
+
+calcDisplaySummary(account1.movements);
+
+
 
 
 /////////////////////////////////////////////////
