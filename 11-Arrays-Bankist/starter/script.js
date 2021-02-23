@@ -130,7 +130,7 @@ calcDisplaySummary(account1.movements);
 
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
-// LECTURES
+// LECTURES 
 
 const currencies = new Map([
   ['USD', 'United States dollar'],
