@@ -125,6 +125,33 @@ const calcDisplaySummary = function (movements){
 
 calcDisplaySummary(account1.movements);
 
+//login
+let currentAccount;
+btnLogin.addEventListener('click', function(event){
+  //to prevent 
+  event.preventDefault();
+
+  currentAccount = accounts.find( 
+    acc => acc.username === inputLoginUsername.value
+    // function(acc){
+    //   return acc.username === inputLoginUsername.value}
+  );
+
+  if(currentAccount?.pin === Number(inputLoginPin.value)){
+    //display UI and message
+    labelWelcome.textContent = `Welcome back, ${currentAccount.owner.split(' ')[0]}`;
+    containerApp.style.opacity = 100;
+    
+    //display balance
+
+    //display summary
+
+  }
+    console.log(currentAccount);
+
+})
+
+
 
 
 

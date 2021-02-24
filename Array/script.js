@@ -45,14 +45,20 @@ const account1 = {
 
   const accounts = [account1, account2, account3, account4];
 
+// const first_Account = accounts.find(acc => acc.owner === 'Sarah Smith');
+// console.log(first_Account);
 const first_Account = accounts.find(acc => acc.owner === 'Sarah Smith');
 console.log(first_Account);
 
+
 accounts.forEach(function(acc){
+  console.log(acc);
     if(acc.owner === 'Jonas Schmedtmann'){
         console.log(acc);
      }
-   //console.log(acc.owner === 'Jonas Schmedtmann');
+  
 })
+
+
 
 
