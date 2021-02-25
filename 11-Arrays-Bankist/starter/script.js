@@ -82,8 +82,9 @@ const displayMovements = function(movements){
 
 
 //dispaly balance
-const calcDisplayBalance = function(movements){
-  const balance = movements.reduce((acc, mov) => acc + mov, 0);
+const calcDisplayBalance = function(account){
+  const balance = account.movements.reduce((acc, mov) => acc + mov, 0);
+  acc.balance = balance;
   labelBalance.textContent = `${balance} EUR`;
 }
 
@@ -123,6 +124,17 @@ const calcDisplaySummary = function (account){
   labelSumInterest.textContent = `${interest} €`;
 }
 
+const updateUI = function(acc){
+  //display movements 
+  displayMovements(acc.movements);
+
+  //display balance
+  calcDisplayBalance(acc);
+
+  //display summary
+  calcDisplaySummary(acc);
+
+}
 
 
 //login
@@ -133,8 +145,6 @@ btnLogin.addEventListener('click', function(event){
 
   currentAccount = accounts.find( 
     acc => acc.username === inputLoginUsername.value
-    // function(acc){
-    //   return acc.username === inputLoginUsername.value}
   );
 
   if(currentAccount?.pin === Number(inputLoginPin.value)){
@@ -148,14 +158,7 @@ btnLogin.addEventListener('click', function(event){
     //clear focus
     inputLoginPin.blur();
     
-    //display movements 
-    displayMovements(currentAccount.movements);
-
-    //display balance
-    calcDisplayBalance(currentAccount.movements);
-
-    //display summary
-    calcDisplaySummary(currentAccount);
+    updateUI(currentAccount)
 
   }
 
@@ -164,6 +167,46 @@ btnLogin.addEventListener('click', function(event){
 
 
 
+
+//transfer
+btnTransfer.addEventListener('click', function(event){
+  event.preventDefault();
+  const amount = Number(inputTransferAmount.value);
+  const receiverAcc = accounts.find(acc=> acc.username === inputTransferTo.value );
+  //check the balance b4 transfer
+  if( amount  > 0 && amount <= acc.balance
+    && receiverAcc.username !== acc.username
+    && receiverAcc 
+     ){
+      currentAccount.movements.push(-amount);
+      receiverAcc.movements.push(amount);  
+      updateUI(currentAccount);  
+  }
+
+  //to clean the form input
+  inputTransferAmount.value = inputTransferTo.value = '';
+ 
+  
+
+})
+
+// Close account
+btnClose.addEventListener('click', function(event){
+  event.preventDefault();
+  if(inputCloseUsername.value === currentAccount.username
+    && Number(inputClosePin.value === currentAccount.pin)){
+      const index = accounts.findIndex( acc=> acc.username === currentAccount.username);
+      console.log(index);
+      accounts.splice(index, 1);
+
+      //hide ui
+      containerApp.style.opacity = 0;
+  }
+
+  //clear the inout form
+  inputCloseUsername.value = inputClosePin.value = '';
+  
+})
 
 
 /////////////////////////////////////////////////
