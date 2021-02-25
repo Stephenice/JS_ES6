@@ -79,7 +79,7 @@ const displayMovements = function(movements){
     })
 };
 
-displayMovements(account1.movements);
+
 
 //dispaly balance
 const calcDisplayBalance = function(movements){
@@ -87,7 +87,7 @@ const calcDisplayBalance = function(movements){
   labelBalance.textContent = `${balance} EUR`;
 }
 
-calcDisplayBalance(account1.movements);
+
 
 //creating username and transforming information
 const createUsernames = function(accs){
@@ -103,27 +103,27 @@ const createUsernames = function(accs){
 createUsernames(accounts);
 
 //summary display
-const calcDisplaySummary = function (movements){
-  const income = movements
+const calcDisplaySummary = function (account){
+  const income = account.movements
   .filter(mov => mov > 0)
   .reduce((acc,mov)=> acc + mov,0);
   labelSumIn.textContent = `${income} €`;
 
-  const outcome = movements
+  const outcome = account.movements
   .filter(mov => mov < 0)
   .reduce((acc,mov)=> acc + mov,0);
   labelSumOut.textContent = `${Math.abs(outcome) } €`;
 
   //interest rate
-  const interest = movements
+  const interest = account.movements
   .filter(mov => mov > 0)
-  .map(mov => (mov * 1.2)/100)
+  .map(mov => (mov * account.interestRate)/100)
   .filter (mov => mov > 1)
   .reduce((acc, mov)=> acc + mov,0);
   labelSumInterest.textContent = `${interest} €`;
 }
 
-calcDisplaySummary(account1.movements);
+
 
 //login
 let currentAccount;
@@ -141,13 +141,24 @@ btnLogin.addEventListener('click', function(event){
     //display UI and message
     labelWelcome.textContent = `Welcome back, ${currentAccount.owner.split(' ')[0]}`;
     containerApp.style.opacity = 100;
+
+    //clear the input field
+    inputLoginUsername.value = inputLoginPin.value = '';
+
+    //clear focus
+    inputLoginPin.blur();
     
+    //display movements 
+    displayMovements(currentAccount.movements);
+
     //display balance
+    calcDisplayBalance(currentAccount.movements);
 
     //display summary
+    calcDisplaySummary(currentAccount);
 
   }
-    console.log(currentAccount);
+
 
 })
 
