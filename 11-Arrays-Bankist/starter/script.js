@@ -84,7 +84,7 @@ const displayMovements = function(movements){
 //dispaly balance
 const calcDisplayBalance = function(account){
   const balance = account.movements.reduce((acc, mov) => acc + mov, 0);
-  acc.balance = balance;
+  account.balance = balance;
   labelBalance.textContent = `${balance} EUR`;
 }
 
@@ -158,7 +158,8 @@ btnLogin.addEventListener('click', function(event){
     //clear focus
     inputLoginPin.blur();
     
-    updateUI(currentAccount)
+    updateUI(currentAccount);
+
 
   }
 
@@ -171,30 +172,32 @@ btnLogin.addEventListener('click', function(event){
 //transfer
 btnTransfer.addEventListener('click', function(event){
   event.preventDefault();
+
   const amount = Number(inputTransferAmount.value);
-  const receiverAcc = accounts.find(acc=> acc.username === inputTransferTo.value );
+  const receiverAcc = accounts.find(acc => acc.username === inputTransferTo.value );
   //check the balance b4 transfer
-  if( amount  > 0 && amount <= acc.balance
-    && receiverAcc.username !== acc.username
-    && receiverAcc 
-     ){
+  if( amount  > 0 && amount <= currentAccount.balance
+    && receiverAcc.username !== currentAccount.username
+    && receiverAcc){
+
       currentAccount.movements.push(-amount);
       receiverAcc.movements.push(amount);  
       updateUI(currentAccount);  
+
   }
 
   //to clean the form input
   inputTransferAmount.value = inputTransferTo.value = '';
- 
-  
-
 })
+
+
 
 // Close account
 btnClose.addEventListener('click', function(event){
   event.preventDefault();
   if(inputCloseUsername.value === currentAccount.username
-    && Number(inputClosePin.value === currentAccount.pin)){
+    && Number(inputClosePin.value) === currentAccount.pin){
+
       const index = accounts.findIndex( acc=> acc.username === currentAccount.username);
       console.log(index);
       accounts.splice(index, 1);
@@ -205,7 +208,7 @@ btnClose.addEventListener('click', function(event){
 
   //clear the inout form
   inputCloseUsername.value = inputClosePin.value = '';
-  
+   
 })
 
 
