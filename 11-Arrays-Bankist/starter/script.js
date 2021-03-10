@@ -244,7 +244,7 @@ btnSort.addEventListener('click', function(event){
 
 })
 
-console.log(sorted);
+//console.log(sorted);
 
 
 
@@ -261,3 +261,16 @@ const currencies = new Map([
 //const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
 /////////////////////////////////////////////////
+// practice
+//1.
+const bankDepositSum = accounts
+.flatMap(acc => acc.movements)
+.filter(acc => acc >0)
+.reduce((sum,value) => sum+value,0);
+
+console.log(bankDepositSum);
+
+//2.
+
+
+
