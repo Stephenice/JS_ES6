@@ -6,7 +6,6 @@ const species = function(arrayElement){
     console.log(arrayElement);
     //Note:: NodeList doesnt support addEventListener so its must be loop to apply addEventListener
     arrayElement.addEventListener('click', function(e){
-        console.log(arrayElement.dataset.animalType);
         alert(arrayElement.dataset.animalType);
 
     })
