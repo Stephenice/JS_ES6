@@ -1,0 +1,4 @@
+li[data-animal-type="bird"]{
+    color: red;
+    font-weight:bolder;
+}
