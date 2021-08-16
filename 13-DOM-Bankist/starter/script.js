@@ -40,6 +40,9 @@ const section1 = document.querySelector('#section--1');
 
 btnScrollTo.addEventListener('click', function(event){
 event.preventDefault;
-section1.scrollIntoView({behavior : 'smooth'});
+console.log(event.target.getBoundingClientRect());
+
+//section1.scrollIntoView({behavior : 'smooth'});
 })
 
+//test
