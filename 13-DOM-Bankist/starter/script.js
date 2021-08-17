@@ -45,6 +45,7 @@ console.log(event.target.getBoundingClientRect());
 //old version
 const s1coords =section1.getBoundingClientRect();
 console.log(s1coords);
+alert(section1.getBoundingClientRect().top)
 
 //section1.scrollIntoView({behavior : 'smooth'});
 })
