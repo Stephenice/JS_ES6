@@ -52,7 +52,7 @@ window.scrollTo({
   behavior: "smooth"
 })
 
-// new version for scrolling smoothly
+// new version for scrolling smoothly update
 //section1.scrollIntoView({behavior : 'smooth'});
 })
 
