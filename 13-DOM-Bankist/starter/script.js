@@ -40,13 +40,19 @@ const section1 = document.querySelector('#section--1');
 
 btnScrollTo.addEventListener('click', function(event){
 event.preventDefault;
-console.log(event.target.getBoundingClientRect());
+//console.log(event.target.getBoundingClientRect());
 
-//old version
+//old version for scrolling
 const s1coords =section1.getBoundingClientRect();
 console.log(s1coords);
-alert(section1.getBoundingClientRect().top)
 
+window.scrollTo({
+  left: s1coords.left + window.pageXOffset,
+  top: s1coords.top + window.pageYOffset,
+  behavior: "smooth"
+})
+
+// new version for scrolling smoothly
 //section1.scrollIntoView({behavior : 'smooth'});
 })
 
