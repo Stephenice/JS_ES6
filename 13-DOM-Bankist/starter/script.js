@@ -42,6 +42,10 @@ btnScrollTo.addEventListener('click', function(event){
 event.preventDefault;
 console.log(event.target.getBoundingClientRect());
 
+//old version
+const s1coords =section1.getBoundingClientRect();
+console.log(s1coords);
+
 //section1.scrollIntoView({behavior : 'smooth'});
 })
 
