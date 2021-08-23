@@ -8,6 +8,8 @@ const btnsOpenModal = document.querySelectorAll('.btn--show-modal');
 //element for smooth scrolling
 const btnScrollTo = document.querySelector('.btn--scroll-to');
 const section1 = document.querySelector('#section--1');
+//for nav
+const nav__parent_container = document.querySelector('.nav__links');
 
 
 ///////////////////////////////////////
@@ -62,8 +64,13 @@ section1.scrollIntoView({behavior : 'smooth'});
 //....Step 1. Add event to the common parent element 
 //....Step 2. Determine what element originate the event 
 
-const nav__parent_container = document.querySelector('.nav__links');
- nav__parent_container.addEventListener('click', function(){
-   
+ nav__parent_container.addEventListener('click', function(e){
+   e.preventDefault();
+  
+  //matching strategy
+  if(e.target.classList.contains('nav__link')){
+    const id = e.target.getAttribute('href');
+    document.querySelector(id).scrollIntoView({behavior: 'smooth'});
+  }
  })
 
