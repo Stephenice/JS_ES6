@@ -1,12 +1,15 @@
 'use strict';
 
-///////////////////////////////////////
-// Modal window
-
+//element 
 const modal = document.querySelector('.modal');
 const overlay = document.querySelector('.overlay');
 const btnCloseModal = document.querySelector('.btn--close-modal');
 const btnsOpenModal = document.querySelectorAll('.btn--show-modal');
+
+///////////////////////////////////////
+// Modal window
+
+
 
 const openModal = function (event) {
   event.preventDefault();
@@ -39,21 +42,24 @@ const btnScrollTo = document.querySelector('.btn--scroll-to');
 const section1 = document.querySelector('#section--1');
 
 btnScrollTo.addEventListener('click', function(event){
+  console.log(event);
 event.preventDefault;
 //console.log(event.target.getBoundingClientRect());
 
 //old version for scrolling
 const s1coords =section1.getBoundingClientRect();
-console.log(s1coords);
 
-window.scrollTo({
-  left: s1coords.left + window.pageXOffset,
-  top: s1coords.top + window.pageYOffset,
-  behavior: "smooth"
-})
+// window.scrollTo({
+//   left: s1coords.left + window.pageXOffset,
+//   top: s1coords.top + window.pageYOffset,
+//   behavior: "smooth"
+// })
 
 // new version for scrolling smoothly update
-//section1.scrollIntoView({behavior : 'smooth'});
+section1.scrollIntoView({behavior : 'smooth'});
 })
 
-//test
+//page navigation old 
+
+//page navigation new Using Event Delegation
+
