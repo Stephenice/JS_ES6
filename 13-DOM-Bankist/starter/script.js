@@ -5,12 +5,13 @@ const modal = document.querySelector('.modal');
 const overlay = document.querySelector('.overlay');
 const btnCloseModal = document.querySelector('.btn--close-modal');
 const btnsOpenModal = document.querySelectorAll('.btn--show-modal');
+//element for smooth scrolling
+const btnScrollTo = document.querySelector('.btn--scroll-to');
+const section1 = document.querySelector('#section--1');
+
 
 ///////////////////////////////////////
 // Modal window
-
-
-
 const openModal = function (event) {
   event.preventDefault();
   modal.classList.remove('hidden');
@@ -38,9 +39,6 @@ document.addEventListener('keydown', function (e) {
 
 
 //smooth scrolling
-const btnScrollTo = document.querySelector('.btn--scroll-to');
-const section1 = document.querySelector('#section--1');
-
 btnScrollTo.addEventListener('click', function(event){
   console.log(event);
 event.preventDefault;
@@ -48,7 +46,6 @@ event.preventDefault;
 
 //old version for scrolling
 const s1coords =section1.getBoundingClientRect();
-
 // window.scrollTo({
 //   left: s1coords.left + window.pageXOffset,
 //   top: s1coords.top + window.pageYOffset,
