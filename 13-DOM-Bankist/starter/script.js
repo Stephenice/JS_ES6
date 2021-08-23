@@ -59,4 +59,11 @@ section1.scrollIntoView({behavior : 'smooth'});
 //page navigation old 
 
 //page navigation new Using Event Delegation
+//....Step 1. Add event to the common parent element 
+//....Step 2. Determine what element originate the event 
+
+const nav__parent_container = document.querySelector('.nav__links');
+ nav__parent_container.addEventListener('click', function(){
+   
+ })
 
