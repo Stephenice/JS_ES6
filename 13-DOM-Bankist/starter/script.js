@@ -86,6 +86,19 @@ section1.scrollIntoView({behavior : 'smooth'});
 //tabs 
  const tab_container = document.querySelector('.operations__tab-container');
  const tab_buttons = document.querySelectorAll('.operations__tab');
+ const tab_contents = document.querySelectorAll('.operations__content');
+
+ tab_container.addEventListener('click', function(e){
+   const clicked = e.target.closest('.operations__tab')
+console.log(clicked);
+
+//Guard clause
+if(!clicked) return;
+
+tab_buttons.forEach(tab_el => tab_el.classList.remove('operations__tab--active'));
+clicked.classList.add('operations__tab--active');
+ })
+
 
  //Dom trversing
  const h1 = document.querySelector('h1')
