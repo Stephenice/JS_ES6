@@ -59,29 +59,35 @@ section1.scrollIntoView({behavior : 'smooth'});
 })
 
 //page navigation old 
-const nav = document.querySelectorAll('.nav__link');
-nav.forEach(nav_el =>nav_el.addEventListener('click',function(e){
-  e.preventDefault();
-const id = nav_el.getAttribute('href');
-document.querySelector(id).scrollIntoView({behavior: 'smooth'});
+// const nav = document.querySelectorAll('.nav__link');
+// nav.forEach(nav_el =>nav_el.addEventListener('click',function(e){
+//   e.preventDefault();
+// const id = nav_el.getAttribute('href');
+// document.querySelector(id).scrollIntoView({behavior: 'smooth'});
 
-} ))
+// } ))
 
 //page navigation new Using Event Delegation
 //....Step 1. Add event to the common parent element 
 //....Step 2. Determine what element originate the event 
 
-//  nav__parent_container.addEventListener('click', function(e){
-//    e.preventDefault();
+ nav__parent_container.addEventListener('click', function(e){
+   e.preventDefault();
   
-//   //matching strategy
-//   if(e.target.classList.contains('nav__link')){
-//     const id = e.target.getAttribute('href');
-//     document.querySelector(id).scrollIntoView({behavior: 'smooth'});
-//   }
-//  })
+  //matching strategy
+  if(e.target.classList.contains('nav__link')){
+    const id = e.target.getAttribute('href');
+    document.querySelector(id).scrollIntoView({behavior: 'smooth'});
+  }
+ })
 
 
 
+//tabs 
+ const tab_container = document.querySelector('.operations__tab-container');
+ const tab_buttons = document.querySelectorAll('.operations__tab');
 
  //Dom trversing
+ const h1 = document.querySelector('h1')
+console.log(h1.parentNode);
+console.log(h1.parentElement);
