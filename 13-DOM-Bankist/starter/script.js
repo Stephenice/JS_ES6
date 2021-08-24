@@ -96,7 +96,15 @@ console.log(clicked);
 if(!clicked) return;
 
 tab_buttons.forEach(tab_el => tab_el.classList.remove('operations__tab--active'));
+tab_contents.forEach(tab_content => tab_content.classList.remove('operations__content--active'));
+
 clicked.classList.add('operations__tab--active');
+
+//activate the contents tabbed
+document.querySelector(`.operations__content--${clicked.dataset.tab}`).classList.add('operations__content--active')
+
+
+
  })
 
 
