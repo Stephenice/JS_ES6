@@ -90,7 +90,6 @@ section1.scrollIntoView({behavior : 'smooth'});
 
  tab_container.addEventListener('click', function(e){
    const clicked = e.target.closest('.operations__tab')
-console.log(clicked);
 
 //Guard clause
 if(!clicked) return;
@@ -102,11 +101,23 @@ clicked.classList.add('operations__tab--active');
 
 //activate the contents tabbed
 document.querySelector(`.operations__content--${clicked.dataset.tab}`).classList.add('operations__content--active')
-
-
-
  })
 
+
+ //Menu fade animation 
+const nav = document.querySelector('.nav');
+
+nav.addEventListener('mouseover', function(e){
+ console.log(e.target);
+ if(e.target.classList.contains('nav__link')){
+
+ }
+ 
+})
+
+nav.addEventListener('mouseout', function(e){
+  console.log(e.target);
+ })
 
  //Dom trversing
  const h1 = document.querySelector('h1')
