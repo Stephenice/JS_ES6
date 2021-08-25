@@ -110,9 +110,10 @@ const nav = document.querySelector('.nav');
 nav.addEventListener('mouseover', function(e){
  console.log(e.target);
  if(e.target.classList.contains('nav__link')){
-
+  const link = e.target;
+  
  }
- 
+
 })
 
 nav.addEventListener('mouseout', function(e){
