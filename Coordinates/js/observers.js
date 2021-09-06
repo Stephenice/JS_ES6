@@ -23,29 +23,30 @@
 
 
 //getBoundingClientRect
-const login = document.querySelector('.login');
+const resultBtn = document.querySelector('.resultBtn');
 const header = document.querySelector("header");
 const resultElement = document.querySelector(".result");
+const result_ul = document.createElement('ul');
 
-login.addEventListener('click', function(e){
-    e.preventDefault;
-    const header = document.querySelector(".result");
-    get_bounding_result(header);
+resultBtn.addEventListener('click', function(e){
+    e.preventDefault();
+   // Assign the element below 
+    const test_element = header;
+    get_bounding_result(test_element);
 })
 
+//getBoundingClientRect function result
 function get_bounding_result(elementCoordinate){
- console.log(elementCoordinate.getBoundingClientRect());
  const result_coordinate = elementCoordinate.getBoundingClientRect();
-    const result_ul = document.createElement('ul');
-    result_ul.innerHTML = `<li>${result_coordinate.bottom}</li>
-                            <li>${result_coordinate.height}</li>
-                            <li>${result_coordinate.left}</li>
-                            <li>${result_coordinate.right}</li>
-                            <li>${result_coordinate.top}</li>
-                            <li>${result_coordinate.width}</li>
-                            <li>${result_coordinate.x}</li>
-                            <li>${result_coordinate.y}</li>`;
-
-     resultElement.prepend(result_ul);
     
+    result_ul.innerHTML = `<li> bottom: ${result_coordinate.bottom}</li>
+                            <li>height :${result_coordinate.height}</li>
+                            <li>left: ${result_coordinate.left}</li>
+                            <li>right: ${result_coordinate.right}</li>
+                            <li>top: ${result_coordinate.top}</li>
+                            <li>width: ${result_coordinate.width}</li>
+                            <li>X: ${result_coordinate.x}</li>
+                            <li>Y: ${result_coordinate.y}</li>`;
+
+     resultElement.prepend(result_ul);  
 };
