@@ -20,3 +20,15 @@
 // sectionOneOptions);
 
 // sectionOneObserver.observe(sectionOne);
+
+
+//getBoundingClientRect
+const login = document.querySelector('.login');
+const header = document.querySelector("header");
+
+login.addEventListener('click', function(e){
+    e.preventDefault;
+    const header = document.querySelector(".home-intro");
+    console.log(header.getBoundingClientRect());
+    console.log();
+})
