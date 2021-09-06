@@ -50,3 +50,16 @@ function get_bounding_result(elementCoordinate){
 
      resultElement.prepend(result_ul);  
 };
+
+//viewport cordinate: relative to the window
+console.log('height and width viewport:', document.documentElement.clientHeight, document.documentElement.clientWidth);
+
+//scrolling co ordinate : relative to the document/page
+console.log('current scroll (X,Y)', window.pageXOffset, window.pageYOffset);
+
+// formular to scroll TO object
+ window.scrollTo({
+    left: element.left + window.pageXOffset,
+    top: element.top + window.pageYOffset,
+    behavior: 'smooth'
+ });
