@@ -155,6 +155,8 @@ rootMargin: `-${navHeight}px`
 const headerObserver = new IntersectionObserver(headerCallback, headerOption);
 headerObserver.observe(header);
 
+//Revealing Elements on Scroll
+
 
 
 //Dom trversing
