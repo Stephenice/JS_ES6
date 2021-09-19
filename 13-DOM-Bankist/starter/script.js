@@ -129,7 +129,35 @@ nav.addEventListener('mouseover', handleHover.bind(0.5) );
 
 nav.addEventListener('mouseout', handleHover.bind(1));
 
- //Dom trversing
- const h1 = document.querySelector('h1')
-console.log(h1.parentNode);
-console.log(h1.parentElement);
+
+//sticky nav -----------
+
+window.addEventListener('scroll', function(){
+  
+})
+
+const header = document.querySelector(".header");
+const navHeight = nav.getBoundingClientRect().height;
+console.log(navHeight);
+
+const headerCallback = function(entries, observ){
+  const [entry] = entries;
+  if(!entry.isIntersecting) nav.classList.add('sticky');
+  else nav.classList.remove('sticky');
+}
+
+const headerOption ={
+root: null,
+threshold: 0,
+rootMargin: `-${navHeight}px`
+}
+
+const headerObserver = new IntersectionObserver(headerCallback, headerOption);
+headerObserver.observe(header);
+
+
+
+//Dom trversing
+//  const h1 = document.querySelector('h1')
+// console.log(h1.parentNode);
+// console.log(h1.parentElement);
