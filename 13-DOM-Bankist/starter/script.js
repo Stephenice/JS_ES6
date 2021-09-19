@@ -158,6 +158,20 @@ headerObserver.observe(header);
 //Revealing Elements on Scroll
 const allSection = document.querySelectorAll('.section');
 
+function sectionCallback(entries, observer){
+    const [entry] = entries;
+
+    if(!entry.isIntersecting) return;
+
+    entry.target.classList.remove('section--hidden');
+    observer.unobserve(entry.target)
+}
+
+const sectionOption = {
+  root: null,
+  threshold: 0.15
+}
+
 const sectionObserver = new IntersectionObserver(sectionCallback, sectionOption);
 allSection.forEach(function(section){
   sectionObserver.observe(section);
