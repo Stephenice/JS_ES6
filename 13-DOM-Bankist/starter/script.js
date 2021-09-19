@@ -156,7 +156,13 @@ const headerObserver = new IntersectionObserver(headerCallback, headerOption);
 headerObserver.observe(header);
 
 //Revealing Elements on Scroll
+const allSection = document.querySelectorAll('.section');
 
+const sectionObserver = new IntersectionObserver(sectionCallback, sectionOption);
+allSection.forEach(function(section){
+  sectionObserver.observe(section);
+  section.classList.add('section--hidden');
+})
 
 
 //Dom trversing
