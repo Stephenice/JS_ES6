@@ -182,13 +182,25 @@ allSection.forEach(function(section){
 
 const targetImg = document.querySelectorAll('img[data-src]');
 
-function lazyCallback(){
+function lazyCallback(entries, observe){
+const [entry] = entries;
 
+if(!entry.isIntersecting) return;
+
+console.log(entry.target.src);
+entry.target.src = entry.target.dataset.src;
+
+entry.target.addEventListener('load', function(){
+  entry.target.classList.remove('lazy-img')
+})
+
+observe.unobserve(entry.target);
 }
 
 const lazyOption ={
   root: null,
-  threshold: 0
+  threshold: 0,
+  rootMargin: '200px'
 }
 
 const lazyObserver = new IntersectionObserver(lazyCallback, lazyOption);
