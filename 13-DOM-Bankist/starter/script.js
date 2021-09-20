@@ -178,7 +178,18 @@ allSection.forEach(function(section){
   section.classList.add('section--hidden');
 })
 
-// Lazy Loading Images
+// Lazy Loading Images- good for performance
+
+function lazyCallback(){
+
+}
+
+const lazyOption ={
+  root: null,
+  threshold: 0
+}
+
+const lazyObserver = new IntersectionObserver(lazyCallback, lazyOption);
 
 
 //Dom trversing
