@@ -178,6 +178,8 @@ allSection.forEach(function(section){
   section.classList.add('section--hidden');
 })
 
+// Lazy Loading Images
+
 
 //Dom trversing
 //  const h1 = document.querySelector('h1')
