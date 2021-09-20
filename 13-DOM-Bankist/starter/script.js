@@ -180,6 +180,8 @@ allSection.forEach(function(section){
 
 // Lazy Loading Images- good for performance
 
+const targetImg = document.querySelectorAll('img[data-src]');
+
 function lazyCallback(){
 
 }
@@ -191,6 +193,10 @@ const lazyOption ={
 
 const lazyObserver = new IntersectionObserver(lazyCallback, lazyOption);
 
+//loopin img
+targetImg.forEach(function img(img){
+  lazyObserver.observe(img);
+})
 
 //Dom trversing
 //  const h1 = document.querySelector('h1')
