@@ -210,6 +210,12 @@ targetImg.forEach(function img(img){
   lazyObserver.observe(img);
 })
 
+
+//Slider Component
+
+
+
+
 //Dom trversing
 //  const h1 = document.querySelector('h1')
 // console.log(h1.parentNode);
