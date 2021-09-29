@@ -175,7 +175,7 @@ const sectionOption = {
 const sectionObserver = new IntersectionObserver(sectionCallback, sectionOption);
 allSection.forEach(function(section){
   sectionObserver.observe(section);
-  section.classList.add('section--hidden');
+  // section.classList.add('section--hidden');
 })
 
 // Lazy Loading Images- good for performance
@@ -212,7 +212,9 @@ targetImg.forEach(function img(img){
 
 
 //Slider Component
+const slides = document.querySelectorAll('.slide');
 
+slides.forEach((s,i) => (s.style.transform = `translateX(${100 * i}%)`));
 
 
 
