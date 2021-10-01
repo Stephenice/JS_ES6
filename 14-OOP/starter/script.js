@@ -14,4 +14,5 @@ console.log(steve);
 const john = new Person('John', 'william');
 
 console.log(steve instanceof Person);
-console.log(steve instanceof Person);
+const jame = 'jame';
+console.log(jame instanceof Person);
