@@ -1,14 +1,14 @@
 'use strict';
 
-const Person = function(firstName,lastName){
-    this.first = firstName;
-    this.last = lastName;
+const Person = function (firstName, lastName) {
+  this.first = firstName;
+  this.last = lastName;
 
-    //never create method inside the f() 
-    //because of functioanilty
-}
+  //never create method inside the f()
+  //because of functioanilty
+};
 
-//towo object created
+//two object created
 const steve = new Person('Steve', 'bill');
 console.log(steve);
 const john = new Person('John', 'william');
@@ -16,3 +16,5 @@ const john = new Person('John', 'william');
 console.log(steve instanceof Person);
 const jame = 'jame';
 console.log(jame instanceof Person);
+
+//Prototypes
