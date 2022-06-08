@@ -1,3 +1,5 @@
+import * as model from './model.js';
+import recipeView from './views/recipeView.js';
 import icons from 'url:../img/icons.svg';
 import 'core-js/stable';
 import 'regenerator-runtime/runtime';
@@ -35,6 +37,10 @@ const showRecipe = async function () {
     if (!id) return;
     // loading spanner
     renderSpanner(recipeContainer);
+
+    // 1: load recipe
+    await model.loadRecipe(id);
+    const { recipe } = model.state;
 
     // 2) rendering recipe
     const markup = `
