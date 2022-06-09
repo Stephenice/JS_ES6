@@ -39,11 +39,7 @@ const controlRecipes = async function () {
   }
 };
 
-// controlRecipes();
-
 //link hashachange
 ['hashchange', 'load'].forEach(ev =>
   window.addEventListener(ev, controlRecipes)
 );
-// window.addEventListener('hashchange', controlRecipes);
-// window.addEventListener('load', controlRecipes);
